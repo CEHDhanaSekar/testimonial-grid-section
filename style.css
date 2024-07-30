@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300&family=Poppins:wght@600&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+}
+body{
+    width: 99vw;
+    min-height: 100vh;
+    background: hsl(210, 46%, 95%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#container{
+    display: grid;
+    grid-template-areas: 
+    "a a a b e"
+    "c d d d e";
+    gap: 15px;
+    max-width: 80%;
+}
+.cards img{
+    width: 32px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    float: left;
+    margin: 0px 20px 10px 0px;
+}
+.cards h3{
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: rgb(233, 231, 231);
+    padding: 0px 20px;
+}
+.cards h3 span{
+    font-weight: 500;
+    font-size: 12px;
+    opacity: .7;
+    display: block;
+}
+.cards .passage1{
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    word-spacing: 1.5px;
+    font-weight: 900;
+    padding: 20px 0px;
+    color: rgb(255, 255, 255);
+}
+.cards .passage2{
+    font-size: 12px;
+    line-height: 1.5em;
+    font-weight: 600;
+    color: rgb(195, 195, 195);
+}
+.cards{
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 2px 0px 10px rgb(212, 212, 212);
+}
+.card1{
+    grid-area: a;
+    background: hsl(263, 55%, 52%) url(images/bg-pattern-quotation.svg);
+    background-position-x: 80%;
+    background-size: 80px;
+    background-repeat: no-repeat;
+}
+.card2{
+    grid-area: b;
+    background-color: hsl(217, 19%, 35%);
+}
+.card3{
+    grid-area: c;
+    background-color: hsl(0, 0%, 100%);
+}
+.card4{
+    grid-area: d;
+    background-color: hsl(219, 29%, 14%);
+}
+.card5{
+    grid-area: e;
+    background-color: hsl(0, 0%, 100%);
+}
+:is(.card3,.card5) :is(.passage1,.passage2,h3,span){
+    color: rgb(3, 3, 3);
+    font-weight: 900;
+}
+@media (max-width:1240px) {
+    body{
+        padding: 50px 0px;
+    }
+    #container{
+        grid-template-areas: 
+        "a d"
+        "b c"
+        "e e"
+        ;
+    }
+}
+@media (max-width:600px) {
+    #container{
+        display: flex;
+        flex-direction: column;
+    }
+}
